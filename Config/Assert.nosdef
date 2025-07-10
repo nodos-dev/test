@@ -1,0 +1,49 @@
+{
+	"nodes": [
+		{
+			"class_name": "Assert",
+			"menu_info": {
+				"category": "Test",
+				"display_name": "Assert",
+				"name_aliases": [ "assert", "test", "verify", "check" ]
+			},
+			"node": {
+
+				"class_name": "Assert",
+				"contents_type": "Job",
+				"description": "Asserts that the input is true, otherwise it will throw an error",
+				"pins": [
+					{
+						"name": "Behaviour",
+						"type_name": "nos.test.AssertionBehaviour",
+						"show_as": "PROPERTY",
+						"can_show_as": "INPUT_PIN_OR_PROPERTY",
+						"data": "SHOW_ON_NODE_STATUS"
+					},
+					{
+						"name": "NumFramesToWait",
+						"display_name": "Frames to Wait",
+						"type_name": "uint",
+						"show_as": "PROPERTY",
+						"can_show_as": "INPUT_PIN_OR_PROPERTY",
+						"data": 0
+					},
+					{
+						"name": "FrameCount",
+						"display_name": "Frame Count",
+						"type_name": "uint",
+						"show_as": "OUTPUT_PIN",
+						"can_show_as": "OUTPUT_PIN_ONLY"
+					},
+					{
+						"name": "Condition",
+						"type_name": "bool",
+						"show_as": "INPUT_PIN",
+						"can_show_as": "INPUT_PIN_OR_PROPERTY",
+						"data": true
+					}
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"info": {
+		"id": {
+			"name": "nos.test",
+			"version": "0.1.0"
+		},
+		"description": "Plugin for running regression/integration tests",
+		"display_name": "Test",
+		"dependencies": [],
+		"category": "Test"
+	},
+	"custom_types": [ 
+		"Config/Test.fbs"
+	],
+	"node_definitions": [
+		"Config/Assert.nosnode"
+	],
+	"named_values": [],
+	"binary_path": "Binaries/nosTest"
+}

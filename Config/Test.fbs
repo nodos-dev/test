@@ -1,0 +1,6 @@
+namespace nos.test;
+
+enum AssertionBehaviour : uint {
+	EXIT_WITH_STATUS_CODE = 0,
+	SHOW_ON_NODE_STATUS = 1,
+}
