@@ -1,5 +1,9 @@
 #include <Nodos/PluginHelpers.hpp>
 #include "Generated/Test_generated.h"
+#ifdef _WIN32
+#include <windows.h>
+#include <process.h>
+#endif
 
 namespace nos::test
 {
@@ -36,7 +40,11 @@ public:
 		switch (behaviour)
 		{
 		case AssertionBehaviour::EXIT_WITH_STATUS_CODE:
-			exit(condition ? 0 : 1);
+#ifdef _WIN32
+			TerminateProcess(GetCurrentProcess(), condition ? 0 : 1);
+#else
+			_exit(condition ? 0 : 1);
+#endif
 			break;
 		case AssertionBehaviour::SHOW_ON_NODE_STATUS:
 			if (!StatusInitialized || condition != LastCondition)

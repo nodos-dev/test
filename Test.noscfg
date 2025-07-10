@@ -13,7 +13,7 @@
 		"Config/Test.fbs"
 	],
 	"node_definitions": [
-		"Config/Assert.nosnode"
+		"Config/Assert.nosdef"
 	],
 	"named_values": [],
 	"binary_path": "Binaries/nosTest"
