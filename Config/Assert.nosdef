@@ -29,6 +29,15 @@
 						"data": 0
 					},
 					{
+						"name": "NumFramesToAssertOver",
+						"display_name": "Frames to Assert Over",
+						"type_name": "uint",
+						"show_as": "PROPERTY",
+						"can_show_as": "INPUT_PIN_OR_PROPERTY",
+						"data": 1,
+						"min": 1
+					},
+					{
 						"name": "FrameCount",
 						"display_name": "Frame Count",
 						"type_name": "uint",
