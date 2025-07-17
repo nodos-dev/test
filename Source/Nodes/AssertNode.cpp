@@ -71,7 +71,7 @@ public:
 #ifdef _WIN32
 			TerminateProcess(GetCurrentProcess(), AssertionResult ? 0 : 1);
 #else
-			_exit(condition ? 0 : 1);
+			_exit(AssertionResult ? 0 : 1);
 #endif
 			break;
 		case AssertionBehaviour::SHOW_ON_NODE_STATUS:
