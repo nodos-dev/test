@@ -1,0 +1,51 @@
+{
+	"nodes": [
+		{
+			"class_name": "TestScheduler",
+			"menu_info": {
+				"category": "Test",
+				"display_name": "Test Scheduler",
+				"name_aliases": [
+					"test scheduler",
+					"testsequence",
+					"testscheduler"
+				]
+			},
+			"node": {
+				"class_name": "TestScheduler",
+				"contents_type": "Job",
+				"description": "Scheduling node for testing",
+				"pins": [
+					{
+						"name": "Run",
+						"type_name": "nos.exe",
+						"show_as": "INPUT_PIN",
+						"can_show_as": "INPUT_PIN_ONLY"
+					},
+					{
+						"name": "Sink",
+						"type_name": "nos.Generic",
+						"show_as": "INPUT_PIN",
+						"can_show_as": "INPUT_PIN_ONLY"
+					},
+					{
+						"name": "FreeRun",
+						"type_name": "bool",
+						"show_as": "PROPERTY",
+						"can_show_as": "INPUT_PIN_OR_PROPERTY",
+						"data": false,
+						"description": "If true, delta time will not be used in scheduling"
+					},
+					{
+						"name": "DeltaTime",
+						"type_name": "nos.fb.vec2u",
+						"show_as": "PROPERTY",
+						"can_show_as": "INPUT_PIN_OR_PROPERTY",
+						"data": { "x": 1, "y": 60 },
+						"description": "Delta time to use when scheduling tests. It does not mean there is actually a frame delay of this length between schedules."
+					}
+				]
+			}
+		}
+	]
+}

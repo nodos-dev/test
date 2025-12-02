@@ -14,10 +14,12 @@ namespace nos::test
 enum Nodes : int
 {
 	AssertNode = 0,
+	TestScheduler,
 	Count
 };
 
 nosResult RegisterAssertNode(nosNodeFunctions*);
+nosResult RegisterTestScheduler(nosNodeFunctions*);
 
 nosResult NOSAPI_CALL ExportNodeFunctions(size_t* outSize, nosNodeFunctions** outList)
 {
@@ -40,6 +42,7 @@ nosResult NOSAPI_CALL ExportNodeFunctions(size_t* outSize, nosNodeFunctions** ou
 		default:
 			break;
 			GEN_CASE_NODE(AssertNode)
+			GEN_CASE_NODE(TestScheduler)
 		}
 	}
 	return NOS_RESULT_SUCCESS;

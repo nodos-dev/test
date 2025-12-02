@@ -1,390 +1,193 @@
-{ "info": { "version": "1.4.0.b0", "build_time": "2025-07-09 16:05:07 +0300", "loaded_modules": [
-      { "name": "nos.sys.shaderc", "version": "1.1.0.b953" },
-      { "name": "nos.sys.vulkan", "version": "6.27.1.b687" },
-      { "name": "nos.sys.settings", "version": "1.0.0.b821" },
-      { "name": "nos.sys.device", "version": "0.11.0.b28" },
-      { "name": "nos.utilities", "version": "3.25.0.b1043" },
-      { "name": "nos.math", "version": "1.22.0.b1033" },
-      { "name": "nos.reflect", "version": "1.12.1" },
-      { "name": "nos.sys.variables", "version": "1.11.2.b986" },
-      { "name": "nos.test", "version": "0.1.0" }
+{ "info": { "version": "1.4.0.b4576", "build_time": "2025-11-24 16:51:37 +0300", "loaded_modules": [
+      { "name": "nos.test", "version": "0.3.0" }
     ] }, "graph": {
-    "id": "1897282f-5699-4fac-a804-220c340cf046",
+    "id": "82ec4da6-abcd-4218-8a13-22e7ff1a9977",
     "pos": { "x": 0.0, "y": 0.0 },
     "contents_type": "Graph",
     "contents": { "nodes": [
         {
-          "id": "783ffbb2-b205-473a-8400-efcbdf1a2fb0",
-          "name": "Sink",
-          "class_name": "nos.utilities.SinkGraph",
+          "id": "56490ebe-6f39-4167-b3f7-bcd7f2600bea",
+          "name": "TestScheduler",
+          "class_name": "nos.test.TestScheduler",
           "pins": [
             {
-              "id": "759cd821-db1b-42a0-b2ef-f947f89f7764",
-              "name": "Sink Input",
+              "id": "670eb800-55b7-4e73-a90f-109cc94623fa",
+              "name": "Run",
+              "type_name": "nos.exe",
+              "show_as": "INPUT_PIN",
+              "can_show_as": "INPUT_PIN_ONLY",
+              "visualizers": [],
+              "data": { },
+              "def": { },
+              "contents_type": "JobPin",
+              "contents": { },
+              "orphan_state": { }
+            },
+            {
+              "id": "75232942-aa4c-4008-afd9-0ad991e12428",
+              "name": "Sink",
               "type_name": "uint",
               "show_as": "INPUT_PIN",
               "can_show_as": "INPUT_PIN_ONLY",
-              "visualizer": {
-              },
+              "visualizers": [],
               "data": 1,
               "def": 0,
-              "meta_data_map": [
-                { "key": "Category", "value": "" }
-              ],
-              "contents_type": "PortalPin",
-              "contents": { "source_id": "bdf96496-571a-4de0-a490-f70d493d8185" }
+              "contents_type": "JobPin",
+              "contents": { },
+              "orphan_state": { }
             },
             {
-              "id": "b6a76eed-286b-4db9-bfb7-6e769517f075",
-              "name": "Sink FPS",
-              "type_name": "float",
-              "show_as": "PROPERTY",
-              "can_show_as": "PROPERTY_ONLY",
-              "visualizer": {
-              },
-              "data": 60.0,
-              "min": 0.01,
-              "max": 1000.0,
-              "def": 60.0,
-              "step": 9.9999,
-              "meta_data_map": [
-                { "key": "Category", "value": "" }
-              ],
-              "contents_type": "PortalPin",
-              "contents": { "source_id": "2b84ac56-d520-4ecb-86c3-eb9904ba14a7" },
-              "display_name": "FPS"
-            },
-            {
-              "id": "366122a5-43c8-4c00-bb4e-ae53930b7028",
-              "name": "AcceptsRepeat",
+              "id": "515a404b-a3e5-45c3-98ac-84cea7c6583d",
+              "name": "FreeRun",
               "type_name": "bool",
               "show_as": "PROPERTY",
-              "can_show_as": "PROPERTY_ONLY",
-              "visualizer": {
-              },
+              "can_show_as": "INPUT_PIN_OR_PROPERTY",
+              "visualizers": [],
               "data": false,
               "def": false,
-              "meta_data_map": [
-                { "key": "AdvancedProperty", "value": "true" },
-                { "key": "Category", "value": "" }
-              ],
-              "contents_type": "PortalPin",
-              "contents": { "source_id": "7122a0ee-ce95-4d22-9b74-80c256c452c5" },
-              "display_name": "Accept Repeat"
+              "contents_type": "JobPin",
+              "contents": { },
+              "orphan_state": { },
+              "description": "If true, delta time will not be used in scheduling"
             },
             {
-              "id": "e477557f-c875-4d7b-aee4-49b3e090558b",
-              "name": "SinkMode",
-              "type_name": "nos.utilities.SinkMode",
+              "id": "392fbed0-fb43-4267-83ad-7655ed5190b1",
+              "name": "DeltaTime",
+              "type_name": "nos.fb.vec2u",
               "show_as": "PROPERTY",
-              "can_show_as": "PROPERTY_ONLY",
-              "visualizer": {
-              },
-              "data": "Periodic",
-              "def": "Periodic",
-              "meta_data_map": [
-                { "key": "Category", "value": "" }
-              ],
-              "contents_type": "PortalPin",
-              "contents": { "source_id": "0ddc863a-c85b-424d-9bb6-0cc18c8666d7" },
-              "description": "Whether to schedule nodes at an unlimited or fixed rate",
-              "display_name": "Mode"
+              "can_show_as": "INPUT_PIN_OR_PROPERTY",
+              "visualizers": [],
+              "data": { "x": 1, "y": 60 },
+              "def": { "x": 1, "y": 60 },
+              "contents_type": "JobPin",
+              "contents": { },
+              "orphan_state": { },
+              "description": "Delta time to use when scheduling tests. It does not mean there is actually a frame delay of this length between schedules."
             }
           ],
-          "pos": { "x": 120.875, "y": 1.25 },
-          "contents_type": "Graph",
-          "contents": { "nodes": [
-              {
-                "id": "26e7401f-fb4f-4e9c-90e2-d6a09a5b5409",
-                "name": "Sink Input",
-                "class_name": "nos.internal.GraphInput",
-                "pins": [
-                  {
-                    "id": "b217cbde-967c-452a-83ac-1ad11cde00e8",
-                    "name": "Output",
-                    "type_name": "uint",
-                    "show_as": "OUTPUT_PIN",
-                    "can_show_as": "OUTPUT_PIN_ONLY",
-                    "visualizer": {
-                    },
-                    "data": 1,
-                    "def": 0,
-                    "meta_data_map": [
-                      { "key": "Category", "value": "" }
-                    ],
-                    "contents_type": "JobPin",
-                    "contents": { }
-                  },
-                  {
-                    "id": "bdf96496-571a-4de0-a490-f70d493d8185",
-                    "name": "Input",
-                    "type_name": "uint",
-                    "show_as": "INPUT_PIN",
-                    "can_show_as": "INPUT_PIN_ONLY",
-                    "visualizer": {
-                    },
-                    "data": 1,
-                    "referred_by": [
-                      "759cd821-db1b-42a0-b2ef-f947f89f7764"
-                    ],
-                    "def": 0,
-                    "meta_data_map": [
-                      { "key": "Category", "value": "" },
-                      { "key": "PinHidden", "value": "true" }
-                    ],
-                    "contents_type": "JobPin",
-                    "contents": { }
-                  }
-                ],
-                "pos": { "x": -938.0, "y": 108.5 },
-                "contents_type": "Job",
-                "contents": { "type": "" },
-                "function_category": "Default Node",
-                "plugin_version": { "major": 0, "minor": 0, "patch": 0 }
-              },
-              {
-                "id": "f6b2c033-9550-45b1-889b-4decc8135e9c",
-                "name": "Thread",
-                "class_name": "nos.Thread",
-                "always_execute": true,
-                "pins": [
-                  {
-                    "id": "56ef87b6-7635-4731-a15a-3ab690bac221",
-                    "name": "Run",
-                    "type_name": "nos.exe",
-                    "show_as": "OUTPUT_PIN",
-                    "can_show_as": "OUTPUT_PIN_ONLY",
-                    "visualizer": {
-                    },
-                    "data": { },
-                    "def": { },
-                    "meta_data_map": [
-                      { "key": "Category", "value": "" }
-                    ],
-                    "live": true,
-                    "contents_type": "JobPin",
-                    "contents": { }
-                  },
-                  {
-                    "id": "6db433af-6365-4783-9c65-e634b911913e",
-                    "name": "Importance",
-                    "type_name": "ulong",
-                    "show_as": "PROPERTY",
-                    "can_show_as": "PROPERTY_ONLY",
-                    "visualizer": {
-                    },
-                    "data": 0,
-                    "def": 0,
-                    "meta_data_map": [
-                      { "key": "Category", "value": "" }
-                    ],
-                    "contents_type": "JobPin",
-                    "contents": { }
-                  }
-                ],
-                "pos": { "x": -738.0, "y": 89.0 },
-                "contents_type": "Job",
-                "contents": { "type": "" },
-                "function_category": "Default Node",
-                "plugin_version": { "major": 0, "minor": 0, "patch": 0 }
-              },
-              {
-                "id": "335bdbcd-1a07-4594-a27b-63dd086a1488",
-                "name": "Sink",
-                "class_name": "nos.utilities.Sink",
-                "pins": [
-                  {
-                    "id": "2928eb83-167f-49ab-b934-e7b4c09bb00e",
-                    "name": "InExe",
-                    "type_name": "nos.exe",
-                    "show_as": "INPUT_PIN",
-                    "can_show_as": "INPUT_PIN_ONLY",
-                    "visualizer": {
-                    },
-                    "data": { },
-                    "def": { },
-                    "meta_data_map": [
-                      { "key": "Category", "value": "" }
-                    ],
-                    "contents_type": "JobPin",
-                    "contents": { }
-                  },
-                  {
-                    "id": "c09026c7-bb16-4815-bd8b-e61ca9daa522",
-                    "name": "Sink Input",
-                    "type_name": "uint",
-                    "show_as": "INPUT_PIN",
-                    "can_show_as": "INPUT_PIN_ONLY",
-                    "visualizer": {
-                    },
-                    "data": 1,
-                    "def": 0,
-                    "meta_data_map": [
-                      { "key": "Category", "value": "" }
-                    ],
-                    "contents_type": "JobPin",
-                    "contents": { },
-                    "display_name": "Output"
-                  },
-                  {
-                    "id": "2b84ac56-d520-4ecb-86c3-eb9904ba14a7",
-                    "name": "Sink FPS",
-                    "type_name": "float",
-                    "show_as": "PROPERTY",
-                    "can_show_as": "PROPERTY_ONLY",
-                    "visualizer": {
-                    },
-                    "data": 60.0,
-                    "referred_by": [
-                      "b6a76eed-286b-4db9-bfb7-6e769517f075"
-                    ],
-                    "min": 0.01,
-                    "max": 1000.0,
-                    "def": 60.0,
-                    "step": 9.9999,
-                    "meta_data_map": [
-                      { "key": "Category", "value": "" }
-                    ],
-                    "contents_type": "JobPin",
-                    "contents": { }
-                  },
-                  {
-                    "id": "4a13e3e1-fe35-44ba-9eec-ee1b25795e65",
-                    "name": "Wait",
-                    "type_name": "bool",
-                    "show_as": "PROPERTY",
-                    "can_show_as": "PROPERTY_ONLY",
-                    "visualizer": {
-                    },
-                    "data": true,
-                    "def": true,
-                    "meta_data_map": [
-                      { "key": "Category", "value": "" }
-                    ],
-                    "contents_type": "JobPin",
-                    "contents": { },
-                    "description": "Wait until gpu tasks(gpu nodes etc.) are completed."
-                  },
-                  {
-                    "id": "7122a0ee-ce95-4d22-9b74-80c256c452c5",
-                    "name": "AcceptsRepeat",
-                    "type_name": "bool",
-                    "show_as": "PROPERTY",
-                    "can_show_as": "PROPERTY_ONLY",
-                    "visualizer": {
-                    },
-                    "data": false,
-                    "referred_by": [
-                      "366122a5-43c8-4c00-bb4e-ae53930b7028"
-                    ],
-                    "def": false,
-                    "meta_data_map": [
-                      { "key": "Category", "value": "" }
-                    ],
-                    "contents_type": "JobPin",
-                    "contents": { },
-                    "description": "Wait until GPU tasks are completed.",
-                    "display_name": "Accepts Repeat"
-                  },
-                  {
-                    "id": "0ddc863a-c85b-424d-9bb6-0cc18c8666d7",
-                    "name": "SinkMode",
-                    "type_name": "nos.utilities.SinkMode",
-                    "show_as": "PROPERTY",
-                    "can_show_as": "PROPERTY_ONLY",
-                    "visualizer": {
-                    },
-                    "data": "Periodic",
-                    "referred_by": [
-                      "e477557f-c875-4d7b-aee4-49b3e090558b"
-                    ],
-                    "def": "Periodic",
-                    "meta_data_map": [
-                      { "key": "Category", "value": "" }
-                    ],
-                    "contents_type": "JobPin",
-                    "contents": { },
-                    "description": "Whether to schedule nodes at an unlimited or fixed rate",
-                    "display_name": "Mode"
-                  }
-                ],
-                "pos": { "x": -554.0, "y": 128.0 },
-                "contents_type": "Job",
-                "contents": { "type": "" },
-                "function_category": "Default Node",
-                "plugin_version": { "major": 3, "minor": 25, "patch": 0 }
-              }
-            ], "connections": [
-              { "from": "b217cbde-967c-452a-83ac-1ad11cde00e8", "to": "c09026c7-bb16-4815-bd8b-e61ca9daa522", "id": "362cbb5d-3fa9-44c6-8b71-2b275f4aa946" },
-              { "from": "56ef87b6-7635-4731-a15a-3ab690bac221", "to": "2928eb83-167f-49ab-b934-e7b4c09bb00e", "id": "8030be1e-4bc3-46b3-9600-6a79aece9c93" }
-            ] },
+          "pos": { "x": 535.0, "y": 545.0 },
+          "contents_type": "Job",
+          "contents": { "type": "" },
           "function_category": "Default Node",
-          "meta_data_map": [
-            { "key": "PluginVersion", "value": "2.7.0" }
-          ],
-          "plugin_version": { "major": 3, "minor": 25, "patch": 0 }
+          "description": "Scheduling node for testing",
+          "plugin_version": { "major": 0, "minor": 2, "patch": 2 }
         },
         {
-          "id": "a3534d72-bed8-4d19-a528-3c04019f77d0",
-          "name": "Assert",
-          "class_name": "nos.test.Assert",
+          "id": "cdf5f987-18b6-4c65-9035-52466473fe31",
+          "name": "Thread",
+          "class_name": "nos.Thread",
+          "always_execute": true,
           "pins": [
             {
-              "id": "a7c93362-2a41-479c-9b37-23fdb9d2772f",
-              "name": "Behaviour",
-              "type_name": "nos.test.AssertionBehaviour",
-              "show_as": "PROPERTY",
-              "can_show_as": "INPUT_PIN_OR_PROPERTY",
-              "visualizer": {
-              },
-              "data": "EXIT_WITH_STATUS_CODE",
-              "def": "SHOW_ON_NODE_STATUS",
+              "id": "84ab16a5-30d3-4b7f-b7f9-08534ce4d86f",
+              "name": "Run",
+              "type_name": "nos.exe",
+              "show_as": "OUTPUT_PIN",
+              "can_show_as": "OUTPUT_PIN_ONLY",
+              "visualizers": [],
+              "data": { },
+              "def": { },
+              "live": true,
               "contents_type": "JobPin",
-              "contents": { }
+              "contents": { },
+              "orphan_state": { }
             },
             {
-              "id": "2635cf76-265f-4fbd-9b58-5cb76862e106",
-              "name": "NumFramesToWait",
-              "type_name": "uint",
+              "id": "59cec7ce-eca5-4786-a16b-4e5cd4533668",
+              "name": "Importance",
+              "type_name": "ulong",
               "show_as": "PROPERTY",
-              "can_show_as": "INPUT_PIN_OR_PROPERTY",
-              "visualizer": {
-              },
+              "can_show_as": "PROPERTY_ONLY",
+              "visualizers": [],
               "data": 0,
               "def": 0,
               "contents_type": "JobPin",
               "contents": { },
+              "orphan_state": { }
+            }
+          ],
+          "pos": { "x": 297.5, "y": 458.0 },
+          "contents_type": "Job",
+          "contents": { "type": "" },
+          "function_category": "Default Node",
+          "plugin_version": { "major": 0, "minor": 0, "patch": 0 }
+        },
+        {
+          "id": "be71baee-3699-4c9b-a1f4-505760696887",
+          "name": "Assert",
+          "class_name": "nos.test.Assert",
+          "pins": [
+            {
+              "id": "a25a4b4d-d4ec-4934-8542-5521c9729dfd",
+              "name": "Behaviour",
+              "type_name": "nos.test.AssertionBehaviour",
+              "show_as": "PROPERTY",
+              "can_show_as": "INPUT_PIN_OR_PROPERTY",
+              "visualizers": [],
+              "data": "EXIT_WITH_STATUS_CODE",
+              "def": "EXIT_WITH_STATUS_CODE",
+              "contents_type": "JobPin",
+              "contents": { },
+              "orphan_state": { }
+            },
+            {
+              "id": "82bc4170-e6d0-4a63-a0cc-c8b3a0820274",
+              "name": "NumFramesToWait",
+              "type_name": "uint",
+              "show_as": "PROPERTY",
+              "can_show_as": "INPUT_PIN_OR_PROPERTY",
+              "visualizers": [],
+              "data": 0,
+              "def": 0,
+              "contents_type": "JobPin",
+              "contents": { },
+              "orphan_state": { },
               "display_name": "Frames to Wait"
             },
             {
-              "id": "63b3b58e-804a-4536-910a-5ef239abf171",
+              "id": "5b89c65c-3e0e-4ebd-a918-11b1cf12bffb",
+              "name": "NumFramesToAssertOver",
+              "type_name": "uint",
+              "show_as": "PROPERTY",
+              "can_show_as": "INPUT_PIN_OR_PROPERTY",
+              "visualizers": [],
+              "data": 1,
+              "min": 1,
+              "def": 1,
+              "contents_type": "JobPin",
+              "contents": { },
+              "orphan_state": { },
+              "display_name": "Frames to Assert Over"
+            },
+            {
+              "id": "cdef39e5-3319-4c1c-91bd-3d3bf5731a04",
               "name": "FrameCount",
               "type_name": "uint",
               "show_as": "OUTPUT_PIN",
               "can_show_as": "OUTPUT_PIN_ONLY",
-              "visualizer": {
-              },
+              "visualizers": [],
               "data": 1,
               "def": 0,
               "contents_type": "JobPin",
               "contents": { },
+              "orphan_state": { },
               "display_name": "Frame Count"
             },
             {
-              "id": "6f602ed0-6a4a-4977-ab01-d44a3fe79dbd",
+              "id": "3e621d0d-115b-411d-93d7-2b730a6d98e5",
               "name": "Condition",
               "type_name": "bool",
               "show_as": "INPUT_PIN",
               "can_show_as": "INPUT_PIN_OR_PROPERTY",
-              "visualizer": {
-              },
+              "visualizers": [],
               "data": true,
               "def": true,
               "contents_type": "JobPin",
-              "contents": { }
+              "contents": { },
+              "orphan_state": { }
             }
           ],
-          "pos": { "x": -91.0, "y": 1.0 },
+          "pos": { "x": 206.0, "y": 570.0 },
           "contents_type": "Job",
           "contents": { "type": "" },
           "function_category": "Default Node",
@@ -394,10 +197,11 @@
             }
           ],
           "description": "Asserts that the input is true, otherwise it will throw an error",
-          "plugin_version": { "major": 0, "minor": 1, "patch": 0 }
+          "plugin_version": { "major": 0, "minor": 2, "patch": 2 }
         }
       ], "connections": [
-        { "from": "63b3b58e-804a-4536-910a-5ef239abf171", "to": "759cd821-db1b-42a0-b2ef-f947f89f7764", "id": "19e596ca-6b8f-42da-ac7a-9f8408051efd" }
+        { "from": "cdef39e5-3319-4c1c-91bd-3d3bf5731a04", "to": "75232942-aa4c-4008-afd9-0ad991e12428", "id": "72af39a0-b840-4665-9c2d-1922eaba957a" },
+        { "from": "84ab16a5-30d3-4b7f-b7f9-08534ce4d86f", "to": "670eb800-55b7-4e73-a90f-109cc94623fa", "id": "3618ee93-445a-4c10-a8b2-4bf173bc1b4d" }
       ] },
     "plugin_version": { "major": 0, "minor": 0, "patch": 0 }
   } }
