@@ -4,13 +4,13 @@ namespace nos::test
 {
 
 NOS_REGISTER_NAME(FreeRun)
-NOS_REGISTER_NAME(DeltaSeconds)
+NOS_REGISTER_NAME(DeltaTime)
 
 struct TestScheduler : NodeContext
 {
 	nosResult OnCreate(nosFbNodePtr node) override
 	{
-		AddPinValueWatcher(NSN_DeltaSeconds, [this](nos::Buffer const& newVal, std::optional<nos::Buffer> oldValue) {
+		AddPinValueWatcher(NSN_DeltaTime, [this](nos::Buffer const& newVal, std::optional<nos::Buffer> oldValue) {
 			nosEngine.RecompilePath(NodeId);
 			});
 		AddPinValueWatcher(NSN_FreeRun, [this](nos::Buffer const& newVal, std::optional<nos::Buffer> oldValue) {
@@ -49,7 +49,7 @@ struct TestScheduler : NodeContext
 		}
 		else
 		{
-			auto delta = **GetWatchedPinValue<nosVec2u>(NSN_DeltaSeconds);
+			auto delta = **GetWatchedPinValue<nosVec2u>(NSN_DeltaTime);
 			info->DeltaSeconds = delta;
 		}
 	}
