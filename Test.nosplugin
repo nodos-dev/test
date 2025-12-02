@@ -2,7 +2,7 @@
 	"info": {
 		"id": {
 			"name": "nos.test",
-			"version": "0.2.2"
+			"version": "0.3.0"
 		},
 		"description": "Plugin for running regression/integration tests",
 		"display_name": "Test",
