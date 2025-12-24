@@ -10,5 +10,6 @@
 		"category": "Test"
 	},
 	"named_values": [],
-	"binary_path": "Binaries/nosTest"
+	"binary_path": "Binaries/nosTest",
+	"sdk_version": "40.0"
 }

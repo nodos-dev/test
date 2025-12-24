@@ -1,5 +1,5 @@
 #include <Nodos/Plugin.hpp>
-#include "Generated/Test_generated.h"
+#include "nosTest/Test_generated.h"
 #ifdef _WIN32
 #include <windows.h>
 #include <process.h>
