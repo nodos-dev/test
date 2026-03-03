@@ -10,8 +10,6 @@ namespace nos::test
 
 struct AssertNode : NodeContext
 {
-	using NodeContext::NodeContext;
-
 private:
 	bool LastAssertionResult = true;
 	bool AccumStatusShown = false;
@@ -31,13 +29,13 @@ public:
 		ClearNodeStatusMessages();
 	}
 
-	nosResult ExecuteNode(nosNodeExecuteParams* params) override
+	nosResult ExecuteNode(NodeExecuteParams const& params) override
 	{
 		nos::NodeExecuteParams pins(params);
-		auto& condition = *pins.GetPinData<bool>(NOS_NAME("Condition"));
-		auto& behaviour = *pins.GetPinData<AssertionBehaviour>(NOS_NAME("Behaviour"));
-		auto framesToWait = *pins.GetPinData<uint32_t>(NOS_NAME("NumFramesToWait"));
-		auto framesToAssertOver = *pins.GetPinData<uint32_t>(NOS_NAME("NumFramesToAssertOver"));
+		auto& condition = *pins.GetPinValue<bool>(NOS_NAME("Condition"));
+		auto& behaviour = *pins.GetPinValue<AssertionBehaviour>(NOS_NAME("Behaviour"));
+		auto framesToWait = *pins.GetPinValue<uint32_t>(NOS_NAME("NumFramesToWait"));
+		auto framesToAssertOver = *pins.GetPinValue<uint32_t>(NOS_NAME("NumFramesToAssertOver"));
 		++FrameCount;
 		nosEngine.SetPinValueByName(NodeId, NOS_NAME("FrameCount"), nos::Buffer::From(FrameCount));
 		if (FrameCount <= framesToWait)

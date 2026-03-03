@@ -34,7 +34,7 @@ struct TestScheduler : NodeContext
 		ScheduleNode();
 	}
 
-	nosResult ExecuteNode(nosNodeExecuteParams* params) override
+	nosResult ExecuteNode(NodeExecuteParams const& params) override
 	{
 		ScheduleNode();
 		return NOS_RESULT_SUCCESS;
